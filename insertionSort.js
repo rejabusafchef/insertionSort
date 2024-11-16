@@ -1,16 +1,11 @@
 function insertionSort(arr) {
   for (let i = 1; i <= arr.length - 1; i++) {
     let nti = arr[i];
-    for (let j = i - 1; (j >= 0); j--) {
-      se = arr[j];
-      if (se > nti) {
-        arr[j + 1] = se;
-      }
-      else {
-        arr[j + 1] = nti;
-        break;
-      }
+    let j = 0;
+    for (j = i - 1; (j >= 0) && (arr[j] > nti); j--) {
+      arr[j + 1] = arr[j];
     }
+    arr[j + 1] = nti;
   }
   return arr;
 }
